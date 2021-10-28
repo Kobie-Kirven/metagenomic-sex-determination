@@ -1,6 +1,0 @@
-Job started on comp-sc-0235.acib.production.int.aci.ics.psu.edu at Wed Oct 27 01:12:55 EDT 2021
-Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
-Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
-Extracting propper alignments:
-	A total of 38285 alignments met the criteria
-The average NC_000024.10:NC_000023.11 ratio for the file was 0.9977562095910845
