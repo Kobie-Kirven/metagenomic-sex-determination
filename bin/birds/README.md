@@ -1,0 +1,5 @@
+- bird_pipeline.sh - Download anser indicus metagenomes and run SCIMS
+- chicken_reference.sh - download the chicken genome
+- chicken_scaf_ids.txt - FASTA ids for the chicken chromosome
+- pbs_script.pbs - Submit chicken_reference.sh to ROAR
+- tibet_runs.txt - SRA ids of anser indicus from tibet

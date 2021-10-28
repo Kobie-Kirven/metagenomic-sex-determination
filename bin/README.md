@@ -1,4 +1,4 @@
-##bin/ - Scripts for data analysis:
+## bin/ - Scripts for data analysis:
 
 contents:
 - download_reference_genome.sh - Download the human reference genome from NCBI (10-06-2021)
