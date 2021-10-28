@@ -1,0 +1,5 @@
+Job started on comp-sc-0195.acib.production.int.aci.ics.psu.edu at Wed Oct 27 00:36:22 EDT 2021
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 38285 alignments met the criteria

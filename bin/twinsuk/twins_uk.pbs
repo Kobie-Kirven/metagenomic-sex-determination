@@ -1,0 +1,48 @@
+###########################
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=4
+
+#PBS -l pmem=50gb
+
+#PBS -l walltime=5:00:00
+
+#PBS -A open
+
+# Get started
+
+echo "Job started on $(hostname) at $(date)"
+
+############################
+module load gcc/8.3.1
+module load bowtie2
+conda activate metagenomicPipeline
+##################################
+
+###################################
+# Trim Data
+###################################
+mkdir -p /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk
+location=/gpfs/group/exd44/default/data/TwinsUK/BGImetagenomes/raw_data/batch1/
+home_dir=/gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk/
+
+file_prefix=(BGI36049 BGI36050 BGI36702 BGI36703 BGI37181 BGI37182 BGI37201 BGI37202 BGI37268 BGI37269)
+
+#file_prefix=(BGI36049)
+
+cd /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/
+
+for prefix in ${file_prefix[@]}; do
+    trimmomatic PE -baseout ${home_dir}${prefix}.fq ${location}${prefix}.1.fq.gz \
+    ${location}${prefix}.2.fq.gz SLIDINGWINDOW:4:30
+    
+    scims -i data/10-06-2021/bowtie2_index/GRCh38_latest_genomic \
+    -sca bin/twinsuk/chroms.txt \
+    -r data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna  \
+    -1 ${home_dir}${prefix}_1P.fq -2 ${home_dir}${prefix}_2P.fq \
+    -t 3 -het NC_000024.10 -hom NC_000023.11 \
+    -o results/hmp_${prefix}
+    
+    rm -rf ${home_dir}${prefix}*
+done
+

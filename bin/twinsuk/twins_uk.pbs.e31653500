@@ -1,0 +1,7 @@
+TrimmomaticPE: Started with arguments:
+ -baseout /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk/BGI36049.fq /gpfs/group/exd44/default/data/TwinsUK/BGImetagenomes/raw_data/batch1/BGI36049.1.fq.gz /gpfs/group/exd44/default/data/TwinsUK/BGImetagenomes/raw_data/batch1/BGI36049.2.fq.gz SLIDINGWINDOW:4:30
+Multiple cores found: Using 4 threads
+Using templated Output files: /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk/BGI36049_1P.fq /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk/BGI36049_1U.fq /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk/BGI36049_2P.fq /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/twinsuk/BGI36049_2U.fq
+Quality encoding detected as phred64
+Input Read Pairs: 46950535 Both Surviving: 41609836 (88.62%) Forward Only Surviving: 3072001 (6.54%) Reverse Only Surviving: 1065576 (2.27%) Dropped: 1203122 (2.56%)
+TrimmomaticPE: Completed successfully

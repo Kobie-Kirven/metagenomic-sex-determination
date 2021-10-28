@@ -1,0 +1,51 @@
+Job started on comp-sc-0197.acib.production.int.aci.ics.psu.edu at Wed Oct 27 09:46:27 EDT 2021
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 38285 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 0.9977562095910845
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 345092 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 1.0207301780134623
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 66208 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 0.99679189256398
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 1352 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 0.846685642578241
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 4905 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 1.132764582789149
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 4084 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 0.931849532489215
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 3632 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 1.2370582577490825
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 2290 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 1.3242280405380562
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 262 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 0.8240962181982324
+Aligning sequences to data/10-06-2021/bowtie2_index/GRCh38_latest_genomic:
+Getting scaffold lengths for data/10-06-2021/reference_genome/GRCh38_latest_genomic.fna
+Extracting propper alignments:
+	A total of 2194 alignments met the criteria
+The average NC_000024.10:NC_000023.11 ratio for the file was 0.8293243819485653

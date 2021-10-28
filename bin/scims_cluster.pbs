@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=4
+
+#PBS -l pmem=40gb
+
+#PBS -l walltime=2:00:00
+
+#PBS -A open
+
+# Get started
+
+echo "Job started on $(hostname) at $(date)"
+
+# Go to the correct place
+
+cd /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/bin
+
+module load anaconda3
+
+source activate metagenomicPipeline
+
+module load gcc/8.3.1
+module load bowtie2/2.4.2
+
+
+
+# Run the job itself
+/storage/home/kjk6173/.local/bin/scims \
+-i /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/10-06-2021/bowtie2_index/mm39.fa.masked.gz \
+-r /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/10-06-2021/reference_genome/mm39.fa.masked \
+-1 /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/10-06-2021/reads/ERR3473656_1P.fq \
+-2 /gpfs/group/exd44/default/kjk6173/metagenomic-sex-pipeline/data/10-06-2021/reads/ERR3473656_2P.fq \
+-hom "chrX" -het "chrY" -o mouse_test -t 32
+
+# Finish up
+
+echo "Job Ended at $(date)"
