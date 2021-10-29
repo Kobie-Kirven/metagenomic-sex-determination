@@ -13,8 +13,10 @@
 <h2>---------------------------</h2>
 <h2>Metagenomic Sex Calling Pipeline: 10-06-2021</h2>
 <h3>Introduction:</h3>
+The goal of this project was to develop a method to determine host genetic
+sex using shotgun metagenomic data. 
 <h3>Methods:</h3>
-<h3><em>Initially Downloading Data</em></h3>
+<h3><em>Downloading and Simulating Data</em></h3>
 <p class=para>
 The human reference genome build GRCh38 was downloaded from NCBI using
 the script "download_reference_genome.sh." Because I needed to be able 
@@ -38,6 +40,7 @@ male and female mock genomes. The results of the X:Autosomal coverage ratios
 are shown in Figure 1.
 </p>
 
+<h3><em>Validating WGSIM Worked As Expected</em></h3>
 <p class=para>
 After looking at the resuts of the X:Autosomal, average coverage ratio plots, 
 it was was apparent that something may have not gone correctly in the process
@@ -54,6 +57,7 @@ and wgsim does not care about the FASTA IDs. It generates reads from each
 sequence in the reference genome. 
 </p>
 
+<h3><em>Inspiration From Zonkey</em></h3>
 <p class=para>
 I next tried to figure out how the authors of the Zonkey pipeline calculated
 their coverage. After looking around in their GitHub repo, I found on one
@@ -82,6 +86,8 @@ coverages for each of the autosomes. This entire process, using the adapted
 version of the Zonkey method, was done for both male and female artifical 
 genomes, and the results are plotted in Figure 2. 
 </p>
+
+<h3><em>Sequencing Depth on X:Autosomal Ratios</em></h3>
 <p class=para>
 I next asked the question, does sequencing depth effect the X:Autosomal
 ratios? To test this, I ran the same pipeline for simulating shotgun read
@@ -90,7 +96,6 @@ generation from an artifical genome, and I used the sequencing depths
 I combined the pipeline into one script titled "read_depth_pipeline.sh." The 
 results from varying the seqencing depth are plotted in Figure 3. 
 </p>
-
 <p class=para>
 The next question became, does preforming multiple runs of the read simulation 
 and chromosome mapping give wildly different coverage results? To answer this 
@@ -99,59 +104,57 @@ for 100 runs and plotted the results in Figure 4. Additionally, I ran the same
 repeated simulations at a sequencing depth of 5000 reads, and the results
 are shown in Figure 4. 
 </p>
-<h3>Results:</h3>
 
-<img src="figures/x_to_autosome_female_10000.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_10000.png" height="300" width="300"  />
-<p style="margin-bottom:50;" class=para>
+<h3>Results:</h3>
+<img src="figures/x_to_autosome_female_10000.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_10000.png" height="200" width="200"  />
+<p style="margin-bottom:100;" class=para>
 <strong>Figure 1.</strong> Plots of the average coverage of X chromosome divided by average 
 coverage for each chromosome.
 </p>
 
 <p class=para>
- <p>
- <img src="figures/x_to_autosome_female_10000_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_10000_zonkey.png" height="300" width="300"  />
+ <img src="figures/x_to_autosome_female_10000_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_10000_zonkey.png" height="200" width="200"  />
 </p>
 <p style="margin-bottom:50;" class=para>
 <strong>Figure 2.</strong> Plots of the normalized coverage of the X chromosome divided
 by normalized coverage for each chromosome.
 </p>
-</p>
 
 <p class=para>
  <p>
- <img src="figures/x_to_autosome_female_100_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_100_zonkey.png" height="300" width="300"  />
+ <img src="figures/x_to_autosome_female_100_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_100_zonkey.png" height="200" width="200"  />
 </p>
 <p>
-<img src="figures/x_to_autosome_female_250_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_250_zonkey.png" height="300" width="300"  />
-</p>
-
-<p>
-<img src="figures/x_to_autosome_female_500_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_500_zonkey.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_female_250_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_250_zonkey.png" height="200" width="200"  />
 </p>
 
 <p>
-<img src="figures/x_to_autosome_female_1000_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_1000_zonkey.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_female_500_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_500_zonkey.png" height="200" width="200"  />
 </p>
 
 <p>
-<img src="figures/x_to_autosome_female_2500_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_2500_zonkey.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_female_1000_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_1000_zonkey.png" height="200" width="200"  />
 </p>
 
 <p>
-<img src="figures/x_to_autosome_female_5000_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_5000_zonkey.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_female_2500_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_2500_zonkey.png" height="200" width="200"  />
 </p>
 
 <p>
-<img src="figures/x_to_autosome_female_7500_zonkey.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_male_7500_zonkey.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_female_5000_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_5000_zonkey.png" height="200" width="200"  />
+</p>
+
+<p>
+<img src="figures/x_to_autosome_female_7500_zonkey.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_male_7500_zonkey.png" height="200" width="200"  />
 </p>
 
 <p style="margin-bottom:50;" class=para>
@@ -160,13 +163,13 @@ by normalized coverage for each chromosome with varying sequencing depth.
 </p>
 
 <p>
-<img src="figures/x_to_autosome_male_zonkey_2500_100_reps.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_female_zonkey_2500_100_reps.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_male_zonkey_2500_100_reps.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_female_zonkey_2500_100_reps.png" height="200" width="200"  />
 </p>
 
 <p>
-<img src="figures/x_to_autosome_male_zonkey_5000_100_reps.png" height="300" width="300"  />
-<img src="figures/x_to_autosome_female_zonkey_5000_100_reps.png" height="300" width="300"  />
+<img src="figures/x_to_autosome_male_zonkey_5000_100_reps.png" height="200" width="200"  />
+<img src="figures/x_to_autosome_female_zonkey_5000_100_reps.png" height="200" width="200"  />
 </p>
 
 <p style="margin-bottom:50;" class=para>
@@ -199,80 +202,169 @@ divided by the normalized coverage for X for 100 runs at a sequenceing depth of
 </p>
 
 <h3>Materials and Methods:</h3>
+<h3><em>Data Analysis</em></h3>
 <p>
     Data was transfered by Emily Davenport to the "/gpfs/group/exd44/default/data/TwinsUK/BGImetagenomes"
     directory. Next, the data were quality filtered usign trimmomatic with a 
     sliding window of 4 with a minimum average quality of 30. After quality 
     filtering, the paired reads that passed the filtering step were used 
-    as input for SCIMS. 
-    
+    as input for SCIMS. The process was implemented in bin/twinsuk/twinsuk.pbs,
+    and the results are plotted in Figure 4. 
+</p>
+<p>
+The Twins UK samples from batch 2 were ran throught the same pipeline.
+</p>
+
+<h3><em>Chromosome Specific Coverages</em></h3>
+<p>
+In order to see if specific chromosomes had X:Autosomal ratios that differed
+from 1, the X:Autosomal ratio for each chromosomes was calculated accross
+all Twins UK samples, and the results were plotted in figure 5. 
 </p>
 
 <h3>Results:</h3>
 <p>
-<img src="hmp_BGI36049.png" height="300" width="300"  />
-<img src="hmp_BGI36050.png" height="300" width="300"  />
-<img src="hmp_BGI36702.png" height="300" width="300"  />
-<img src="hmp_BGI36703.png" height="300" width="300"  />
-<img src="hmp_BGI37181.png" height="300" width="300"  />
-<img src="hmp_BGI37182.png" height="300" width="300"  />
-<img src="hmp_BGI37201.png" height="300" width="300"  />
-<img src="hmp_BGI37202.png" height="300" width="300"  />
+<img src="figures/twinsuk_BGI36049.png" height="200" width="200"  />
+<img src="figures/twinsuk_BGI36050.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/twinsuk_BGI36702.png" height="200" width="200"  />
+<img src="figures/twinsuk_BGI36703.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/twinsuk_BGI37181.png" height="200" width="200"  />
+<img src="figures/twinsuk_BGI37182.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/twinsuk_BGI37201.png" height="200" width="200"  />
+<img src="figures/twinsuk_BGI37202.png" height="200" width="200"  />
 </p>
 
-From left to right: (Row 1) BGI36049 BGI36050 BGI36702 BGI36703 (Row 2) BGI37181 BGI37182 BGI37201 
-BGI37202
+<p>
+<img src="figures/twinsuk_BGI37268.png" height="200" width="200"  />
+<img src="figures/twinsuk_BGI37269.png" height="200" width="200"  />
+</p>
+
+<strong>Figure 4.</strong> From left to right: BGI36049, BGI36050, BGI36702, BGI36703, BGI37181, BGI37182, BGI37201, 
+BGI37202, BGI37268, BGI37269.
 
 <h2>
+    Table 1. 
 <table>
   <tr>
-    <th>Sample Name |</th>
-    <th>True Genetic Sex |</th>
+    <th>Sample Name</th>
+    <th>True Genetic Sex</th>
     <th>Total # of Reads Mapping</th>
+    <th>Average X:Autosomal</th>
   </tr>
   <tr>
     <td>36049</td>
     <td>F</td>
     <td>38285</td>
+    <td>0.998</td>
   </tr>
   <tr>
     <td>36050</td>
     <td>F</td>
     <td>345092</td>
+    <td>1.021</td>
   </tr>
   <tr>
     <td>36702</td>
     <td>F</td>
     <td>66208</td>
+    <td>0.997</td>
   </tr>
   <tr>
     <td>36703</td>
     <td>F</td>
     <td>1352</td>
+    <td>0.847</td>
   </tr>
   <tr>
     <td>37181</td>
     <td>F</td>
     <td>4905</td>
+    <td>1.133</td>
   </tr>
   <tr>
     <td>37182</td>
     <td>F</td>
     <td>4084</td>
+    <td>0.932</td>
   </tr>
   <tr>
     <td>37201</td>
     <td>F</td>
     <td>3632</td>
+    <td>1.237</td>
   </tr>
   <tr>
     <td>37202</td>
     <td>F</td>
     <td>2290</td>
+    <td>1.324</td>
+  </tr>
+  <tr>
+    <td>37268</td>
+    <td>F</td>
+    <td>262</td>
+    <td>0.824</td>
+  </tr>
+  <tr>
+    <td>37269</td>
+    <td>F</td>
+    <td>2194</td>
+    <td>0.829</td>
   </tr>
 </table>
 </h2>
 
+
+<p>
+<img src="figures/NC_000001.11_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000002.12_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000003.12_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000004.12_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000005.10_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000006.12_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000007.14_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000008.11_twins_uk.png" height="200" width="200"  />
+</p>
+
+<p>
+<img src="figures/NC_000009.12_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000010.11_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000012.12_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000013.11_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000014.9_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000015.10_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000016.10_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000017.11_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000018.10_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000017.11_twins_uk.png" height="200" width="200"  />
+</p>
+<p>
+<img src="figures/NC_000020.11_twins_uk.png" height="200" width="200"  />
+<img src="figures/NC_000021.9_twins_uk.png" height="200" width="200"  />
+</p>
+<strong>Figure 5.</strong> X:Autosomal ratio for each chromosome accross
+Twins UK samples. Blue line indicates and X:Autosomal ratio of 1. 
+
 <h2 style="margin-top:100;">SCiMS With Single-end Data</h2>
-<img src="tibet_SRR9850902.png" height="300" width="300"  />
+<img src="figures/tibet_SRR9850902.png" height="200" width="200"  />
 
